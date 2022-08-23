@@ -11,7 +11,7 @@ class Transactions(models.Model):
     error_message = models.TextField('ErrorMessage', max_length = 1000)
 
     def __str__(self):
-        return f"{self.amount} : {self.senders_account} : {self.receivers_account}"
+        return f"Money - {self.amount} : Sender - {self.senders_account} : Receiver - {self.receivers_account}"
 
     class Meta:
         verbose_name = 'Transactions'
