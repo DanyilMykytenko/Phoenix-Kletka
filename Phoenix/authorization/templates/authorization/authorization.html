@@ -1,5 +1,8 @@
 {% load static %}
-<script type="text/javascript" src="{% static 'authorization/js/authorization.js' %}"></script>
+<script type="text/javascript" src="{% static 'authorization/js/authorization.js' %}"
+        xmlns="http://www.w3.org/1999/html"></script>
+<script type="text/javascript" src="{% static 'authorization/js/main.js' %}"</script>
+<script type="text/javascript" src="{% static 'authorization/js/s.js' %}"</script>
 <link rel="script" href="http://code.jquery.com/jquery-latest.js">
 <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="{% static 'authorization/css/StyleSheet.css' %}">
@@ -31,26 +34,26 @@
 </div>
 </div>
 
-   <div class="limiter">
-       <div class="limiter-body">
+<div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
          <div class="login100-pic js-tilt  pic-center" style='width:425px !important;' data-tilt="">
             <img src="{% static 'authorization/img/img-01.png' %}" alt="IMG" style='width: 100% !important;'>
          </div>
-         <form class="login100-form validate-form">
             <span class="login100-form-title">
             Member Login
             </span>
             <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-               @Html.TextBoxFor(model => model.Login, new { @class = "input100", type="text", name="login", placeholder="Login" })
+                <form method="POST" action="">
+                    {% csrf_token %}
+               <input class = "input100" type="text" name="login" placeholder="Login" >
                <span class="focus-input100"></span>
                <span class="symbol-input100">
                <i class="fa fa-user" aria-hidden="true"></i>
                </span>
             </div>
             <div class="wrap-input100 validate-input" data-validate="Password is required">
-               @Html.TextBoxFor(model => model.Password, new { @class = "input100", type="password", name="pass",placeholder="Password", id="myInput" })
+               <input class = "input100" type="password" name="pass" placeholder="Password" id="myInput">
                <span class="focus-input100"></span>
                <span class="symbol-input100">
                <i class="fa fa-lock" aria-hidden="true"></i>
@@ -61,13 +64,11 @@
                <div class='toggler-text' style='color: black'>Show Password</div>
             </div>
             <div class="container-login100-form-btn">
-               <button class="login100-form-btn" onClick='onLogin()'>
+               <button class="login100-form-btn" type="submit" onClick='onLogin()' value="Login">
                Login
                </button>
             </div>
          </form>
       </div>
    </div>
-</div>
-       </div>
 </div>
