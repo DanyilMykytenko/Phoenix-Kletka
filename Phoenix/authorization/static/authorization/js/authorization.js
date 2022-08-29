@@ -1,4 +1,3 @@
-
 function myFunction() {
     var x = document.getElementById("myInput");
     if (x.type === "password") {
@@ -30,7 +29,7 @@ function hideLoader() {
     var a = document.querySelector(".limiter-body");
     z.classList.add("slide-out-fwd-right");
     setTimeout(() => {
-        b?.classList.remove('loading');
+        b.classList.remove('loading');
         y.classList.remove('hidden');
         x.classList.add('hidden');
         a.classList.add('visible');
@@ -55,14 +54,14 @@ window.addEventListener('load', function () {
         setTimeout(() => {
             changeBackground();
         }, 700)
-    }, 3500)
+    }, 500)
 
 });
 function sendMoneyRequest() {
     let input = document.querySelector('.input-card-number');
     let moneyAmountInput = document.querySelector('.money-amount');
     let e = document.querySelector(".parent-control")
-    var value = e?.options[e.selectedIndex].value;
+    var value = e.options[e.selectedIndex].value;
     input.value = parseInt(value);
     console.log(value);
     moneyAmountInput.addEventListener('input', (e) => {
