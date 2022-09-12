@@ -7,30 +7,9 @@ accTypes = (
     ('Debit', 'Debit'),
 )
 
-# class generator():
-#     def __int__(self):
-#         self.defaultAccountNumber = self.generateAccountNumber()
-#
-#     def getAccountByNumber(self, number):
-#         account_number = Account.objects.get(account_number=number)
-#         if not account_number:
-#             return True
-#         else:
-#             return False
-#
-#     def generateAccountNumber(self):
-#         rnd = 0
-#         while True:
-#             rnd = random.randint(1000, 9999)
-#             if Account.getAccountByNumber(rnd) == True:
-#                 return rnd
-#             else:
-#                 continue
-
 class Account(models.Model):
     owner_id = models.ForeignKey(User, on_delete = models.CASCADE)
     account_number = models.IntegerField('AccountNumber', default = random.randint(1000,9999), unique=True)
-    #account_number = models.IntegerField('AccountNumber', default = generator().defaultAccountNumber, unique=True)
     balance = models.FloatField('Balance', default = 0)
     type = models.CharField('Type', max_length = 50, choices = accTypes)
     api_key = models.TextField('APIKey', max_length = 255)
