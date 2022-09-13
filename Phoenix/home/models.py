@@ -9,11 +9,11 @@ accTypes = (
 
 class Account(models.Model):
     owner_id = models.ForeignKey(User, on_delete = models.CASCADE)
-    account_number = models.IntegerField('AccountNumber', default = random.randint(1000,9999), unique=True)
+    account_number = models.IntegerField('AccountNumber', unique=True)
     balance = models.FloatField('Balance', default = 0)
     type = models.CharField('Type', max_length = 50, choices = accTypes)
     api_key = models.TextField('APIKey', max_length = 255)
-    cvv_code = models.IntegerField('CVVCode', default = random.randint(100,999), unique=True)
+    cvv_code = models.IntegerField('CVVCode', unique=True)
     account_status = models.TextField('Status', max_length = 1000, default = "Just new.")
 
 
