@@ -1,10 +1,14 @@
+.idea/
+
 # Django #
 *.log
 *.pot
 *.pyc
 __pycache__
 db.sqlite3
+local_settings.py
 media
+*.cpyton-310
 
 # Backup files # 
 *.bak 
