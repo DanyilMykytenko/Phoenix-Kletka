@@ -8,7 +8,7 @@ __pycache__
 db.sqlite3
 local_settings.py
 media
-*.cpyton-310
+*.cpyton-310.pyc
 
 # Backup files # 
 *.bak 
